@@ -1,6 +1,6 @@
 exports.core = {
 	'port'       : 8000,
-	'webroot'    : '/',
+	'webroot'    : '/piejs-example-blog/',
 	'debug'      : true,
 	'secret'     : '',
 	'viewEngine' : 'ejs'
