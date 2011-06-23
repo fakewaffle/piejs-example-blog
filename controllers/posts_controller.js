@@ -14,7 +14,11 @@ exports.beforeFilter = function(request, response, callback) {
 
 exports.index = function(request, response) {
 	// Find all posts
-	PostsController.Post.find('all', null, function(results) {
+	PostsController.Post.find('all', {
+		'contain' : {
+			'User' : null
+		}
+	}, function(results) {
 		// Send the results to render the view
 		PostsController.set(request, response, results);
 	});

@@ -10,6 +10,7 @@
 	<% Post.forEach(function(post){ %>
 		<li>
 			<h1><%- pie.Helper.Html.link(post.name, { 'action' : 'view', 'id' : post.id }) %></h1>
+			<p><%- pie.Helper.Html.link(pie.Helper.Sanitize.paranoid(post.User.name), { 'controller' : 'users', 'action' : 'view', 'id' : post.User.id }) %> - <%- pie.Helper.Html.link(post.User.email, 'mailto:' + post.User.email) %></p>
 			<p><%= post.content %></p>
 		</li>
 	<% }) %>
